@@ -3,20 +3,14 @@
   "name": "Agenata",
   "description": "Collect modular, structured data to produce WebAgent datasets",
   "version": "0.0.1",
-  "permissions": [
-    "tabs",
-    "storage",
-    "activeTab",
-    "webNavigation",
-    "unlimitedStorage"
-  ],
+  "permissions": ["storage", "activeTab", "webNavigation", "unlimitedStorage"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "images/icon128.png"
+    "default_icon": "icon128.png"
   },
   "content_scripts": [
     {
@@ -25,6 +19,6 @@
     }
   ],
   "icons": {
-    "128": "images/icon128.png"
+    "128": "icon128.png"
   }
 }

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/omkaark/agenata/blob/main/images/icon128.png?raw=true" height="150" alt="Agenata Icon" />
+  <img src="https://github.com/omkaark/agenata/blob/main/icon128.png?raw=true" height="150" alt="Agenata Icon" />
 </p>
 
 # Agenata - Build Web Datasets with Ease
@@ -10,7 +10,7 @@ The current version is very basic. Feedback is more than welcome (open a github 
 
 ### Reporting Issues
 
-- Please report the issues here on Github. 
+- Please report the issues here on Github.
 
 ## Contributing
 
