@@ -6,7 +6,7 @@
 
 Agenata is a browser-based interaction agent script that helps users perform actions on web pages by simulating clicks and typing based on user requests. The end goal is for it to be used by companies to build chatbots that actually perform tasks for users offered as support bots.
 
-The current version is extremely crude and a one day hack. If you are interested in taking this further, contact me.
+The current version is very basic. Feedback is more than welcome (open a github issue)!
 
 ### Reporting Issues
 
