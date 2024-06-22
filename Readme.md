@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/omkaark/agenata/blob/main/images/icon128.png?raw=true" height="300" alt="Agenata Icon" />
+  <img src="https://github.com/omkaark/agenata/blob/main/images/icon128.png?raw=true" height="150" alt="Agenata Icon" />
 </p>
 
 # Agenata - Build Web Datasets with Ease
