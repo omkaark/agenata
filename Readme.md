@@ -4,9 +4,11 @@
 
 # Agenata - Build Web Datasets with Ease
 
-Agenata is a browser-based interaction agent script that helps users perform actions on web pages by simulating clicks and typing based on user requests. The end goal is for it to be used by companies to build chatbots that actually perform tasks for users offered as support bots.
+Agenata is a utility tool to help collect web interaction data which can then be used to finetune models for better web agency. The data produced are in JSONL format which can later go through post-processing to be suitable for your DOM optimizations.
 
-The current version is very basic. Feedback is more than welcome (open a github issue)!
+This is an offline app .a.k.a no data is sent/received to any server, all data produced is stored locally.
+
+The current version is basic but the app will soon be highly usable as we account for edge cases. Feedback is more than welcome (open a github issue)!
 
 ### Reporting Issues
 

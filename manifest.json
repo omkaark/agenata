@@ -4,7 +4,6 @@
   "description": "Collect modular, structured data to produce WebAgent datasets",
   "version": "0.0.1",
   "permissions": ["storage", "activeTab", "webNavigation", "unlimitedStorage"],
-  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },

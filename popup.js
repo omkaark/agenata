@@ -70,12 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
         chrome.storage.local.get(['allLogs'], function (data) {
             let allLogs = data.allLogs || [];
             if (allLogs.length === 0) {
-                console.log('No logs to export.');
                 document.getElementById('noLogsMessage').classList.remove('hidden');
                 return;
             }
             document.getElementById('noLogsMessage').classList.add('hidden');
-            console.log('Preparing to download all logs');
 
             // Dedupe logs before exporting
             const dedupedLogs = dedupeLogs(allLogs);
@@ -143,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < logs.length; i++) {
             const log = logs[i];
             const typeId = `${log.type}_${log.tagName}_${log.instruction}`;
-            console.log(log.value);
             if (typeId === cachedTypeId) { // TODO: not the best dedupe logic, improve this
                 dedupedLogs[dedupedLogs.length - 1] = log;
             } else {

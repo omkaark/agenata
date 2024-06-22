@@ -31,15 +31,17 @@ class DataEvent {
 
     logEvent() {
         chrome.storage.local.get(['logs', 'currentTask'], function (data) {
-            let logs = data.logs || [];
-            let log = this.toDict();
+            if (data.currentTask) {
+                let logs = data.logs || [];
+                let log = this.toDict();
 
-            log['task'] = data.currentTask
+                log['task'] = data.currentTask
 
-            logs.push(log);
-            chrome.storage.local.set({ logs }, function () {
-                console.log('Log stored for element:', log.element);
-            });
+                logs.push(log);
+                chrome.storage.local.set({ logs }, function () {
+                    console.log('Log stored for element:', log.element);
+                });
+            }
         }.bind(this));
 
         captureDOM();
@@ -64,7 +66,6 @@ document.addEventListener('change', function (e) {
         event.logEvent();
     } else if (e.target.matches('select')) {
         const event = new DataEvent('select', e);
-        console.log('select')
         event.logEvent();
     }
 });
