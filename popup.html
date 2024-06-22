@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task Logger</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        width: 300px;
+        padding: 20px;
+        font-size: 15px;
+      }
+      .hidden {
+        display: none;
+      }
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+      }
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .tab.active {
+        border-bottom: 2px solid #007bff;
+        font-weight: bold;
+      }
+      .content {
+        display: none;
+      }
+      .content.active {
+        display: block;
+      }
+      #taskForm input,
+      #taskForm button {
+        width: calc(100% - 10px);
+        margin: 10px 0;
+      }
+      #taskForm input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      #taskForm input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        outline: none;
+      }
+      .clickButton {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      #tasksList {
+        list-style-type: none;
+        padding: 0;
+        max-height: 250px;
+        overflow-y: scroll;
+      }
+      #tasksList li {
+        margin: 5px 0;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+      }
+      #exportButton {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      #exportButton:hover {
+        background-color: #0056b3;
+      }
+      #fileSizeEstimate {
+        text-align: center;
+        margin-top: 10px;
+        color: #fff;
+      }
+      #noLogsMessage {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tab active" data-tab="logTab">Log</div>
+      <div class="tab" data-tab="exportTab">Export</div>
+    </div>
+    <div id="logTab" class="content active">
+      <form id="taskForm">
+        <input
+          type="text"
+          id="taskInput"
+          autocomplete="off"
+          placeholder="Enter your task"
+        />
+        <button class="clickButton" type="submit">Start Logging</button>
+      </form>
+      <p id="task" class="hidden"></p>
+      <button class="clickButton" id="finishTask" class="hidden">
+        Finish Task
+      </button>
+    </div>
+    <div id="exportTab" class="content">
+      <ul id="tasksList"></ul>
+      <div id="noLogsMessage" class="hidden">No task logs to export</div>
+      <button class="clickButton" id="exportButton">
+        Export All Logs
+        <span id="fileSizeEstimate">(0 MB)</span>
+      </button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
