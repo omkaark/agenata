@@ -25,7 +25,7 @@ def copy_to_clipboard(text):
         print(f"Failed to copy content to clipboard: {str(e)}")
 
 def main():
-    files = ["background.js", "content.js", "manifest.json", "popup.js", "popup.html"]
+    files = ["content.js", "manifest.json", "popup.js", "popup.html"]
     formatted_output = read_and_format_files(files)
     copy_to_clipboard(formatted_output)
 

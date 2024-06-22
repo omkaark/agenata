@@ -4,9 +4,6 @@
   "description": "Collect modular, structured data to produce WebAgent datasets",
   "version": "0.0.1",
   "permissions": ["storage", "activeTab", "webNavigation", "unlimitedStorage"],
-  "background": {
-    "service_worker": "background.js"
-  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon128.png"
