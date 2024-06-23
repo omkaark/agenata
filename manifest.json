@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Agenata",
   "description": "Collect modular, structured data to produce WebAgent datasets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": ["storage", "activeTab", "webNavigation", "unlimitedStorage"],
   "action": {
     "default_popup": "popup.html",

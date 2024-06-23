@@ -69,3 +69,50 @@ document.addEventListener('change', function (e) {
         event.logEvent();
     }
 });
+
+// HOVER FUNCTIONALITY
+
+let oldBorder;
+let hoverBox = document.createElement('div');
+
+hoverBox.style.position = 'absolute';
+hoverBox.style.padding = '5px 10px';
+hoverBox.style.background = 'black';
+hoverBox.style.color = 'white';
+hoverBox.style.borderRadius = '5px';
+hoverBox.style.fontSize = '12px';
+hoverBox.style.zIndex = '10000';
+hoverBox.style.pointerEvents = 'none';
+hoverBox.style.display = 'none';
+document.body.appendChild(hoverBox);
+
+document.addEventListener('mouseover', function (e) {
+    chrome.storage.local.get(['currentTask'], function (data) {
+        if (data.currentTask) {
+            oldBorder = e.target.style.border;
+            e.target.style.border = '2px dashed black';
+            hoverBox.textContent = e.target.tagName + ' element';
+            hoverBox.style.display = 'block';
+            hoverBox.style.left = (e.pageX + 10) + 'px';
+            hoverBox.style.top = (e.pageY + 10) + 'px';
+        }
+    });
+});
+
+document.addEventListener('mouseout', function (e) {
+    chrome.storage.local.get(['currentTask'], function (data) {
+        if (data.currentTask) {
+            e.target.style.border = oldBorder;
+            hoverBox.style.display = 'none';
+        }
+    });
+});
+
+document.addEventListener('mousemove', function (e) {
+    chrome.storage.local.get(['currentTask'], function (data) {
+        if (data.currentTask) {
+            hoverBox.style.left = (e.pageX + 10) + 'px';
+            hoverBox.style.top = (e.pageY + 10) + 'px';
+        }
+    });
+});
